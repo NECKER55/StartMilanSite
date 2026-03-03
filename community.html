@@ -121,7 +121,7 @@
 <body class="h-screen w-screen flex flex-col">
 <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/40 backdrop-blur-md">
 <div class="max-w-[1600px] mx-auto px-8 h-16 flex items-center justify-between">
-<a href="landingpage.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer">
+<a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer">
 <span class="material-symbols-outlined text-white text-xl">arrow_back</span>
 <div class="size-8 bg-primary flex items-center justify-center rounded shadow-[0_0_15px_rgba(37,192,244,0.4)]">
 <span class="material-symbols-outlined text-black text-sm font-bold">rocket_launch</span>
@@ -472,7 +472,7 @@ const renderGraph = () => {
         <span class="dept-label text-primary">${hub.label}</span>
     `;
     hubNode.addEventListener("click", () => {
-        window.location.href = "landingpage.html";
+        window.location.href = "index.html";
     });
     nodesLayer.appendChild(hubNode);
     departments.forEach((dept) => {
