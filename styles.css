@@ -48,7 +48,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 4rem;
     font-weight: 700;
-    color: #000000;
+    color: #00002c;
     letter-spacing: -0.02em;
     margin: 0;
     animation: textReveal 1.5s ease-out 0.5s both;
@@ -58,7 +58,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     font-weight: 400;
-    color: #666666;
+    color: #83af9b;
     margin-top: 1rem;
     animation: subtitleReveal 1s ease-out 1s both;
 }
@@ -66,7 +66,7 @@
 .logo-line {
     width: 60px;
     height: 2px;
-    background: #000000;
+    background: #00002c;
     margin: 1.5rem auto;
     animation: lineGrow 1s ease-out 1.2s both;
     transform: scaleX(0);
@@ -145,11 +145,11 @@
 
 :root {
     /* Colors - Bending Spoons Style */
-    --black: #1a1a1a;          /* Dark gray background */
+    --black: #001e62;          /* Dark gray background */
     --white: #ffffff;          /* White text */
-    --gray: #888888;           /* Medium gray */
-    --light-gray: #2a2a2a;     /* Dark surface */
-    --border-gray: #333333;    /* Dark borders */
+    --gray: #83af9b;           /* Medium gray */
+    --light-gray: #001e62;     /* Dark surface */
+    --border-gray: #001e62;    /* Dark borders */
     
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -221,7 +221,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(26, 26, 26, 0.95);  /* Dark background */
+    background: rgba(0, 0, 44, 0.95);  /* Dark background */
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-gray);
     z-index: 9999 !important;  /* Highest layer - FORCED */
@@ -307,8 +307,8 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, 
-        rgba(26, 26, 26, 0.1) 0%,    /* Very light overlay */
-        rgba(26, 26, 26, 0.3) 100%); /* Gentle darkening */
+        rgba(0, 0, 44, 0.1) 0%,    /* Very light overlay */
+        rgba(0, 0, 44, 0.3) 100%); /* Gentle darkening */
     z-index: 0;  /* Behind content */
     position: relative;
 }
@@ -1082,7 +1082,7 @@ body {
 
 .format-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 44, 0.1);
 }
 
 .format-image {
@@ -1166,7 +1166,7 @@ body {
 
 .benefit-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 44, 0.1);
 }
 
 .benefit-image {
@@ -1423,7 +1423,7 @@ body {
 
 .board-member:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 44, 0.1);
 }
 
 .board-member .member-image {
@@ -1467,7 +1467,7 @@ body {
 
 .department-large:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 44, 0.1);
 }
 
 .dept-icon {
@@ -1645,7 +1645,7 @@ body {
 
 .event-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 44, 0.1);
 }
 
 .event-date {
@@ -1758,8 +1758,8 @@ body {
 }
 
 @keyframes logoGlow {
-    0% { filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.5)); }
-    100% { filter: drop-shadow(0 0 40px rgba(99, 102, 241, 0.8)); }
+    0% { filter: drop-shadow(0 0 20px rgba(0, 48, 135, 0.5)); }
+    100% { filter: drop-shadow(0 0 40px rgba(0, 48, 135, 0.8)); }
 }
 
 .loading-bar {
@@ -1801,7 +1801,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(10, 10, 15, 0.95);
+    background: rgba(0, 0, 44, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: var(--z-nav);
@@ -1809,8 +1809,8 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(10, 10, 15, 0.98);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 44, 0.98);
+    box-shadow: 0 10px 30px rgba(0, 0, 44, 0.3);
 }
 
 .nav-container {
@@ -2070,7 +2070,7 @@ body {
 .stat-item:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 48, 135, 0.1);
 }
 
 .stat-number {
@@ -2299,7 +2299,7 @@ section {
     transform: translateY(-5px);
     border-color: var(--primary-color);
     color: var(--white);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 48, 135, 0.2);
 }
 
 /* Events Section */
@@ -2324,7 +2324,7 @@ section {
 
 .event-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 48, 135, 0.2);
 }
 
 .event-image {
@@ -2340,12 +2340,12 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 44, 0.3);
     transition: all var(--transition-fast);
 }
 
 .event-card:hover .event-overlay {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 44, 0.1);
 }
 
 .event-info {
@@ -2429,7 +2429,7 @@ section {
 
 .audience-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 48, 135, 0.2);
 }
 
 .card-content {
@@ -2482,7 +2482,7 @@ section {
 
 .team-member:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 48, 135, 0.2);
 }
 
 .member-image {
@@ -2498,7 +2498,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 44, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2579,7 +2579,7 @@ section {
 .department-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 48, 135, 0.2);
 }
 
 .dept-icon {
@@ -2726,7 +2726,7 @@ section {
 .social-links a:hover {
     background: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 48, 135, 0.3);
 }
 
 .contact-form {
@@ -2758,7 +2758,7 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 0 20px rgba(0, 48, 135, 0.2);
 }
 
 .form-group input::placeholder,

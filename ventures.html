@@ -12,10 +12,10 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#b90df2",
-                        "background-dark": "#0a0a0a",
-                        "neon-cyan": "#00f2ff",
-                        "charcoal-dark": "#120e14",
+                        "primary": "#003087",
+                        "background-dark": "#00002c",
+                        "neon-cyan": "#05c3de",
+                        "charcoal-dark": "#00002c",
                     },
                     fontFamily: {
                         "display": ["Prompt", "sans-serif"]
@@ -26,23 +26,23 @@
     </script>
 <style type="text/tailwindcss">
         :root {
-            --primary: #b90df2;
-            --neon-cyan: #00f2ff;
+            --primary: #003087;
+            --neon-cyan: #05c3de;
         }
         .grid-pattern {
-            background-image: radial-gradient(circle, #241b27 0.5px, transparent 0.5px);
+            background-image: radial-gradient(circle, #001e62 0.5px, transparent 0.5px);
             background-size: 40px 40px;
         }
         .glass {
-            background: rgba(22, 17, 24, 0.6);
+            background: rgba(0, 30, 98, 0.6);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
         .map-container {
-            background: radial-gradient(circle at 50% 40%, #1a121d 0%, #0a0a0a 100%);
+            background: radial-gradient(circle at 50% 40%, #001e62 0%, #00002c 100%);
         }
         .glow-milan {
-            box-shadow: 0 0 40px 15px rgba(185, 13, 242, 0.3);
+            box-shadow: 0 0 40px 15px rgba(0, 48, 135, 0.3);
         }
         .arc-cyan {
             stroke: var(--neon-cyan);
@@ -51,7 +51,7 @@
             stroke-dasharray: 2, 4;
         }
         .italy-3d-shadow {
-            filter: drop-shadow(15px 15px 30px rgba(0,0,0,0.8));
+            filter: drop-shadow(15px 15px 30px rgba(0, 0, 44, 0.8));
         }
         .map-zoom {
             --zoom-x: 50%;
@@ -65,7 +65,7 @@
                 grayscale(1)
                 brightness(0.5)
                 contrast(2.5)
-                drop-shadow(0 0 6px rgba(185, 13, 242, 0.55));
+                drop-shadow(0 0 6px rgba(0, 48, 135, 0.55));
         }
         .zoom-target {
             height: 100%;
@@ -126,7 +126,7 @@
 <p class="text-[10px] text-primary/80 font-bold uppercase tracking-[0.2em]">National Partnership Network</p>
 </div>
 </a>
-<div class="flex items-center gap-8 text-xs font-medium tracking-widest uppercase text-slate-500">
+<div class="flex items-center gap-8 text-xs font-medium tracking-widest uppercase text-white/60">
 <span class="text-white border-b border-primary pb-1">Observatory</span>
 </div>
 </header>
@@ -145,11 +145,11 @@
 </g>
 <a class="zoom-node" data-zoom-x="33.5%" data-zoom-y="16.2%" href="index.html" aria-label="Go to START Milan landing page">
 <circle class="hq-dot" cx="335" cy="162" r="8"></circle>
-<circle class="hq-dot" cx="335" cy="162" r="18" fill="none" stroke="rgba(185, 13, 242, 0.35)" stroke-width="2">
+<circle class="hq-dot" cx="335" cy="162" r="18" fill="none" stroke="rgba(0, 48, 135, 0.35)" stroke-width="2">
 <animate attributeName="r" values="12;20;12" dur="2.6s" repeatCount="indefinite"></animate>
 </circle>
 <text x="360" y="150" font-size="14" fill="#ffffff" font-weight="700">START Milan</text>
-<text x="360" y="168" font-size="10" fill="#b90df2" font-weight="700">HQ HUB</text>
+<text x="360" y="168" font-size="10" fill="#003087" font-weight="700">HQ HUB</text>
 </a>
 
 <g class="zoom-node" data-zoom-x="26%" data-zoom-y="20%">
@@ -179,20 +179,20 @@
 </div>
 <div class="space-y-4">
 <div class="flex justify-between items-center">
-<span class="text-xs text-slate-400">Total Partners</span>
+<span class="text-xs text-white/70">Total Partners</span>
 <span class="text-sm font-mono text-white">4</span>
 </div>
 <div class="flex justify-between items-center">
-<span class="text-xs text-slate-400">Primary Hubs</span>
+<span class="text-xs text-white/70">Primary Hubs</span>
 <span class="text-sm font-mono text-white">1</span>
 </div>
 <div class="flex justify-between items-center">
-<span class="text-xs text-slate-400">Active Connections</span>
+<span class="text-xs text-white/70">Active Connections</span>
 <span class="text-sm font-mono text-white">12</span>
 </div>
 <div class="pt-2">
 <div class="h-[1px] w-full bg-white/5 mb-3"></div>
-<p class="text-[10px] text-slate-500 italic leading-relaxed">
+<p class="text-[10px] text-white/60 italic leading-relaxed">
                                 Observing data synchronization across all regional nodes. Connections indicate high-bandwidth strategic partnerships.
                             </p>
 </div>
@@ -200,25 +200,25 @@
 </div>
 <div class="absolute top-0 right-10 flex flex-col items-end gap-6 pt-10">
 <div class="text-right">
-<p class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em]">Status</p>
+<p class="text-[10px] text-white/60 font-bold uppercase tracking-[0.3em]">Status</p>
 <div class="flex items-center gap-2 justify-end mt-1">
-<span class="h-1.5 w-1.5 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></span>
-<span class="text-xs font-medium text-slate-300">SYSTEM OPERATIONAL</span>
+<span class="h-1.5 w-1.5 rounded-full bg-[#83af9b] shadow-[0_0_8px_#83af9b]"></span>
+<span class="text-xs font-medium text-white/70">SYSTEM OPERATIONAL</span>
 </div>
 </div>
 <div class="glass p-4 rounded flex flex-col gap-3">
 <div class="flex items-center gap-3">
 <div class="h-2 w-2 bg-primary shadow-[0_0_10px_var(--primary)]"></div>
-<span class="text-[10px] tracking-widest text-slate-300 uppercase">Core HQ</span>
+<span class="text-[10px] tracking-widest text-white/70 uppercase">Core HQ</span>
 </div>
 <div class="flex items-center gap-3">
 <div class="h-2 w-2 rounded-full bg-neon-cyan shadow-[0_0_10px_var(--neon-cyan)]"></div>
-<span class="text-[10px] tracking-widest text-slate-300 uppercase">Partner Node</span>
+<span class="text-[10px] tracking-widest text-white/70 uppercase">Partner Node</span>
 </div>
 </div>
 </div>
 <div class="absolute bottom-6 right-6 opacity-20 pointer-events-none">
-<p class="text-[9px] font-mono text-slate-500">45.4642° N, 9.1900° E (MILAN_HUB)</p>
+<p class="text-[9px] font-mono text-white/60">45.4642° N, 9.1900° E (MILAN_HUB)</p>
 </div>
 </main>
 </div>

@@ -12,11 +12,11 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#25c0f4",
-                        "accent-magenta": "#ff00ff",
-                        "accent-gold": "#ffd700",
-                        "background-dark": "#000000",
-                        "card-glass": "rgba(10, 10, 10, 0.7)",
+                        "primary": "#05c3de",
+                        "accent-magenta": "#003087",
+                        "accent-gold": "#83af9b",
+                        "background-dark": "#00002c",
+                        "card-glass": "rgba(0, 0, 44, 0.7)",
                     },
                     fontFamily: {
                         "sans": ["Prompt", "sans-serif"]
@@ -32,7 +32,7 @@
             }
         }
         .mesh-canvas {
-            background: radial-gradient(circle at center, #111 0%, #000 100%);
+            background: radial-gradient(circle at center, #00002c 0%, #00002c 100%);
             perspective: 1200px;
         }
         #mesh-scene {
@@ -46,11 +46,11 @@
         .glass-panel {
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(10, 10, 10, 0.6);
+            background: rgba(0, 0, 44, 0.6);
         }
-        .node-glow-cyan { filter: drop-shadow(0 0 8px rgba(37, 192, 244, 0.6)); }
-        .node-glow-magenta { filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.6)); }
-        .node-glow-gold { filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6)); }
+        .node-glow-cyan { filter: drop-shadow(0 0 8px rgba(5, 195, 222, 0.6)); }
+        .node-glow-magenta { filter: drop-shadow(0 0 8px rgba(0, 48, 135, 0.6)); }
+        .node-glow-gold { filter: drop-shadow(0 0 8px rgba(131, 175, 155, 0.6)); }
         .node-glow-white { filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); }
         .pulse-line {
             stroke-dasharray: 4, 6;
@@ -85,7 +85,7 @@
             border-radius: 9999px;
             border-width: 1px;
             border-style: solid;
-            background: #000;
+            background: #00002c;
             object-fit: cover;
             object-position: center;
             image-rendering: -webkit-optimize-contrast;
@@ -114,17 +114,17 @@
         }
         .member-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(37, 192, 244, 0.15);
+            box-shadow: 0 8px 24px rgba(5, 195, 222, 0.15);
         }
     </style>
 </head>
 <body class="h-screen w-screen flex flex-col">
-<header class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/40 backdrop-blur-md">
+<header class="fixed top-0 w-full z-50 border-b border-white/5 bg-background-dark/40 backdrop-blur-md">
 <div class="max-w-[1600px] mx-auto px-8 h-16 flex items-center justify-between">
 <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer">
 <span class="material-symbols-outlined text-white text-xl">arrow_back</span>
-<div class="size-8 bg-primary flex items-center justify-center rounded shadow-[0_0_15px_rgba(37,192,244,0.4)]">
-<span class="material-symbols-outlined text-black text-sm font-bold">rocket_launch</span>
+<div class="size-8 bg-primary flex items-center justify-center rounded shadow-[0_0_15px_rgba(5, 195, 222, 0.4)]">
+<span class="material-symbols-outlined text-background-dark text-sm font-bold">rocket_launch</span>
 </div>
 <span class="text-sm font-bold tracking-tighter uppercase">START <span class="text-primary">Milan</span> / <span class="opacity-50 font-normal">Mesh Network</span></span>
 </a>
@@ -169,7 +169,7 @@
 </span>
 </div>
 <div class="flex items-center gap-3">
-<a id="profile-website" href="#" target="_blank" rel="noopener" class="flex-1 py-3 rounded-lg bg-white text-black font-black text-[10px] uppercase tracking-widest hover:bg-primary transition-colors text-center">Website</a>
+<a id="profile-website" href="#" target="_blank" rel="noopener" class="flex-1 py-3 rounded-lg bg-white text-background-dark font-black text-[10px] uppercase tracking-widest hover:bg-primary transition-colors text-center">Website</a>
 <a id="profile-linkedin" href="#" target="_blank" rel="noopener" class="size-10 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
 <svg class="size-4 fill-white" viewBox="0 0 24 24" aria-hidden="true">
 <path d="M20.45 20.45h-3.56v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.41-2.07 2.86v5.49H9.46V9h3.41v1.56h.05c.47-.9 1.63-1.86 3.35-1.86 3.58 0 4.24 2.36 4.24 5.43v6.32zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
@@ -197,7 +197,7 @@
 </div>
 </div>
 <div class="mt-4 flex items-center gap-3">
-<a id="dept-lead-website" href="#" target="_blank" rel="noopener" class="flex-1 py-2.5 rounded-lg bg-white text-black font-black text-[10px] uppercase tracking-widest hover:bg-primary transition-colors text-center">Website</a>
+<a id="dept-lead-website" href="#" target="_blank" rel="noopener" class="flex-1 py-2.5 rounded-lg bg-white text-background-dark font-black text-[10px] uppercase tracking-widest hover:bg-primary transition-colors text-center">Website</a>
 <a id="dept-lead-linkedin" href="#" target="_blank" rel="noopener" class="size-10 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
 <svg class="size-4 fill-white" viewBox="0 0 24 24" aria-hidden="true">
 <path d="M20.45 20.45h-3.56v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.41-2.07 2.86v5.49H9.46V9h3.41v1.56h.05c.47-.9 1.63-1.86 3.35-1.86 3.58 0 4.24 2.36 4.24 5.43v6.32zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
@@ -255,7 +255,7 @@ const fallbackDepartments = [
         id: "operations",
         label: "Operations",
         icon: "code",
-        color: "#25c0f4",
+        color: "#05c3de",
         glowClass: "node-glow-cyan",
         textClass: "text-primary",
         borderClass: "border-primary",
@@ -291,7 +291,7 @@ const fallbackDepartments = [
         id: "growth",
         label: "Growth",
         icon: "campaign",
-        color: "#ff00ff",
+        color: "#003087",
         glowClass: "node-glow-magenta",
         textClass: "text-accent-magenta",
         borderClass: "border-accent-magenta",
@@ -313,7 +313,7 @@ const fallbackDepartments = [
         id: "events",
         label: "Events",
         icon: "event_seat",
-        color: "#25c0f4",
+        color: "#05c3de",
         glowClass: "node-glow-cyan",
         textClass: "text-primary",
         borderClass: "border-primary",
@@ -334,7 +334,7 @@ const fallbackDepartments = [
         id: "partnerships",
         label: "Partnerships",
         icon: "handshake",
-        color: "#ffd700",
+        color: "#83af9b",
         glowClass: "node-glow-gold",
         textClass: "text-accent-gold",
         borderClass: "border-accent-gold",
@@ -434,10 +434,10 @@ const addLine = (x1, y1, x2, y2, stroke, width = 0.6, opacity = 0.7) => {
     line.setAttribute("opacity", opacity);
     line.classList.add("pulse-line");
     if (stroke.toLowerCase().includes("a855f7") || stroke.toLowerCase().includes("168,85,247")) {
-        line.style.filter = "drop-shadow(0 0 28px rgba(168,85,247,1)) drop-shadow(0 0 12px rgba(168,85,247,1))";
+        line.style.filter = "drop-shadow(0 0 28px rgba(0, 48, 135, 1)) drop-shadow(0 0 12px rgba(0, 48, 135, 1))";
     }
     if (stroke.toLowerCase().includes("25c0f4") || stroke.toLowerCase().includes("37,192,244")) {
-        line.style.filter = "drop-shadow(0 0 28px rgba(37,192,244,1)) drop-shadow(0 0 12px rgba(37,192,244,1))";
+        line.style.filter = "drop-shadow(0 0 28px rgba(5, 195, 222, 1)) drop-shadow(0 0 12px rgba(5, 195, 222, 1))";
     }
     if (stroke.includes("255,255,255")) {
         line.setAttribute("stroke", "rgba(255,255,255,1)");
@@ -479,7 +479,7 @@ const renderGraph = () => {
         const x = dept.pos.x;
         const y = dept.pos.y;
         deptCenters.set(dept.id, { x, y });
-        addLine(toViewBox(hub.x), toViewBox(hub.y), toViewBox(x), toViewBox(y), "#a855f7", 0.7, 0.8);
+        addLine(toViewBox(hub.x), toViewBox(hub.y), toViewBox(x), toViewBox(y), "#003087", 0.7, 0.8);
 
         const deptNode = document.createElement("div");
         deptNode.className = `dept-node group cursor-pointer`;
@@ -542,7 +542,7 @@ const renderGraph = () => {
             personNode.style.boxShadow = `0 0 0 2px ${dept.color}`;
             nodesLayer.appendChild(personNode);
 
-            addLine(toViewBox(x), toViewBox(y), toViewBox(px), toViewBox(py), "rgba(37,192,244,0.8)", 0.4, 0.9);
+            addLine(toViewBox(x), toViewBox(y), toViewBox(px), toViewBox(py), "rgba(5, 195, 222, 0.8)", 0.4, 0.9);
         });
     });
 
@@ -614,7 +614,7 @@ const renderList = () => {
         const header = `
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-4">
-                    <div class="size-12 rounded-xl ${dept.borderClass} border-2 bg-black/50 flex items-center justify-center ${dept.glowClass}">
+                    <div class="size-12 rounded-xl ${dept.borderClass} border-2 bg-background-dark/50 flex items-center justify-center ${dept.glowClass}">
                         <span class="material-symbols-outlined ${dept.textClass} text-2xl">${dept.icon}</span>
                     </div>
                     <div>
@@ -725,8 +725,8 @@ nodesLayer.addEventListener("click", (event) => {
         profileDepartment.textContent = department;
         profileActiveIcon.textContent = isActive ? "check_circle" : "cancel";
         profileActiveText.textContent = isActive ? "Active" : "Inactive";
-        profileActiveIcon.style.color = isActive ? "#25c0f4" : "#9ca3af";
-        profileActiveText.style.color = isActive ? "#25c0f4" : "#9ca3af";
+        profileActiveIcon.style.color = isActive ? "#05c3de" : "#83af9b";
+        profileActiveText.style.color = isActive ? "#05c3de" : "#83af9b";
 
         if (website) {
             profileWebsite.href = website;
