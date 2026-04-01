@@ -94,6 +94,7 @@
         }
         html { scroll-behavior: smooth; }
     </style>
+<link href="magic-bento.css" rel="stylesheet"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-white dark:text-white antialiased selection:bg-primary/30">
 <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
@@ -146,7 +147,7 @@
 </div>
 </div>
 <div class="lg:col-span-6">
-<div class="glass rounded-[2rem] p-6 md:p-8 border border-primary/20 shadow-[0_20px_60px_rgba(0,0,44,0.45)]">
+<div data-magic-bento="true" class="glass rounded-[2rem] p-6 md:p-8 border border-primary/20 shadow-[0_20px_60px_rgba(0,0,44,0.45)]">
 <p class="opacity-80 leading-relaxed mb-7">We’re a part of the sprawling START Network. This interconnection multiplies our potential across the world, allowing us to draw inspiration from diverse cultures, share insights, and create an ecosystem that nurtures collective progress.</p>
 <div class="grid grid-cols-3 gap-4 mb-7">
 <div class="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
@@ -606,7 +607,7 @@
 </div>
 </section>
 <section id="ready-to-join" class="max-w-7xl mx-auto px-6 py-24 mb-24">
-<div class="relative overflow-hidden rounded-[2rem] p-12 md:p-24 bg-gradient-to-br from-[#001e62] to-background-dark border border-white/5 flex flex-col items-center text-center">
+<div data-magic-bento="true" class="relative overflow-hidden rounded-[2rem] p-12 md:p-24 bg-gradient-to-br from-[#001e62] to-background-dark border border-white/5 flex flex-col items-center text-center">
 <div class="absolute -top-24 -right-24 size-96 bg-primary/20 blur-[100px]"></div>
 <div class="absolute -bottom-24 -left-24 size-96 bg-accent-purple/20 blur-[100px]"></div>
 <h2 class="text-4xl md:text-6xl font-black mb-8 max-w-2xl leading-tight">Ready to join our community?</h2>
@@ -614,10 +615,10 @@
                 Apply to join our community and gain access to funding, mentorship, and a global network of innovators.
             </p>
 <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-    <a href="for-students.html" class="px-10 py-5 rounded-2xl bg-primary text-background-dark font-black text-xl shadow-[0_0_30px_rgba(5, 195, 222, 0.4)] hover:scale-105 hover:brightness-110 transition-all flex items-center justify-center">
+    <a data-magic-bento="true" href="for-students.html" class="px-10 py-5 rounded-2xl bg-primary text-background-dark font-black text-xl shadow-[0_0_30px_rgba(5, 195, 222, 0.4)] hover:scale-105 hover:brightness-110 transition-all flex items-center justify-center">
         I'm a Student
     </a>
-    <a href="for-ecosystem-players.html" class="px-10 py-5 rounded-2xl glass font-black text-xl hover:bg-white/10 transition-all flex items-center justify-center">
+    <a data-magic-bento="true" href="for-ecosystem-players.html" class="px-10 py-5 rounded-2xl glass font-black text-xl hover:bg-white/10 transition-all flex items-center justify-center">
         I'm a Player in the Ecosystem
     </a>
 </div>
@@ -674,4 +675,6 @@
 </div>
 </footer>
 
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="scripts/magic-bento.js"></script>
 </body></html>
