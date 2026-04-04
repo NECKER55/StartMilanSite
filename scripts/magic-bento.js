@@ -19,6 +19,7 @@
 
   const gsapRef = window.gsap;
   if (!gsapRef) {
+    console.error("Magic Bento: GSAP library is required for animations. Please include it before this script.");
     return;
   }
 
