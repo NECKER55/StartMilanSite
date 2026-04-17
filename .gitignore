@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+
+# Build outputs (if added later)
+dist/
+build/
+
+# Local editor settings (optional)
+.vscode/
