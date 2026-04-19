@@ -28,7 +28,10 @@
 <style type="text/tailwindcss">
         @layer base {
             body {
-                @apply bg-background-dark text-white overflow-hidden font-sans;
+                background-color: #00002c;
+                color: #ffffff;
+                overflow: hidden;
+                font-family: "Prompt", sans-serif;
             }
         }
         .mesh-canvas {
@@ -448,6 +451,90 @@ const addLine = (x1, y1, x2, y2, stroke, width = 0.6, opacity = 0.7) => {
     edgesLayer.appendChild(line);
 };
 
+const normalizeDepartmentKey = (value) => String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
+
+const PEOPLE_DATA_CACHE_KEY = "start-community-people-data-v1";
+
+const getSafeFallbackDepartments = () => fallbackDepartments.map((dept) => ({
+    ...dept,
+    people: [],
+}));
+
+const resolveRawDepartments = (data) => {
+    if (Array.isArray(data?.departments)) {
+        return data.departments;
+    }
+    if (Array.isArray(data)) {
+        return data;
+    }
+    if (Array.isArray(data?.people)) {
+        const seeded = fallbackDepartments.map((dept) => ({ ...dept, people: [] }));
+        const peopleDept = seeded.find((dept) => normalizeDepartmentKey(dept.id) === "people");
+        if (peopleDept) {
+            peopleDept.people = [...data.people];
+        }
+        return seeded;
+    }
+    return null;
+};
+
+const buildDepartmentsFromJson = (rawDepartments) => {
+    if (!Array.isArray(rawDepartments) || rawDepartments.length === 0) {
+        return getSafeFallbackDepartments();
+    }
+
+    const clones = rawDepartments.map((dept) => ({
+        ...dept,
+        people: Array.isArray(dept.people) ? [...dept.people] : [],
+    }));
+
+    const byId = new Map();
+    const byLabel = new Map();
+    clones.forEach((dept) => {
+        byId.set(normalizeDepartmentKey(dept.id), dept);
+        byLabel.set(normalizeDepartmentKey(dept.label), dept);
+    });
+
+    const allPeople = [];
+    clones.forEach((dept) => {
+        dept.people.forEach((person) => {
+            allPeople.push({ ...person, _originDeptLabel: dept.label, _originDeptId: dept.id });
+        });
+    });
+
+    clones.forEach((dept) => {
+        dept.people = [];
+    });
+
+    const seen = new Set();
+    allPeople.forEach((person) => {
+        const targetKey = normalizeDepartmentKey(person.department);
+        const targetDept = byId.get(targetKey) || byLabel.get(targetKey) || byId.get(normalizeDepartmentKey(person._originDeptId)) || byLabel.get(normalizeDepartmentKey(person._originDeptLabel));
+        if (!targetDept) return;
+
+        const dedupeKey = [
+            normalizeDepartmentKey(targetDept.id),
+            normalizeDepartmentKey(person.name),
+            normalizeDepartmentKey(person.img),
+            normalizeDepartmentKey(person.links?.linkedin),
+        ].join("|");
+        if (seen.has(dedupeKey)) return;
+        seen.add(dedupeKey);
+
+        targetDept.people.push({
+            ...person,
+            size: Number(person.size) > 0 ? Number(person.size) : 24,
+            department: person.department || targetDept.label,
+            links: person.links || {},
+        });
+    });
+
+    return clones;
+};
+
 const renderGraph = () => {
     nodesLayer.innerHTML = "";
     edgesLayer.innerHTML = "";
@@ -499,7 +586,7 @@ const renderGraph = () => {
         `;
         nodesLayer.appendChild(deptNode);
 
-        const radius = 10 + dept.people.length * 1.5;
+        const radius = 7 + Math.min(dept.people.length, 60) * 0.45;
         dept.people.forEach((person, index) => {
             const angle = (Math.PI * 2 * index) / dept.people.length - Math.PI / 2 + Math.PI / 4;
             const px = x + Math.cos(angle) * radius;
@@ -552,16 +639,44 @@ const renderGraph = () => {
 
 const loadDepartments = async () => {
     try {
-        const response = await fetch("data/people.json", { cache: "no-cache" });
+        const bust = Date.now();
+        const response = await fetch(`data/people.json?v=${bust}`, { cache: "no-store" });
         if (!response.ok) {
             throw new Error(`Failed to load data: ${response.status}`);
         }
         const data = await response.json();
-        departments = Array.isArray(data.departments) ? data.departments : fallbackDepartments;
+        try {
+            localStorage.setItem(PEOPLE_DATA_CACHE_KEY, JSON.stringify(data));
+        } catch (storageError) {
+            console.warn("People data cache write skipped.", storageError);
+        }
+
+        const rawDepartments = resolveRawDepartments(data);
+        departments = buildDepartmentsFromJson(rawDepartments);
     } catch (error) {
-        console.error("Failed to load people data, using fallback.", error);
-        departments = fallbackDepartments;
+        console.error("Failed to load people data, trying cached data.", error);
+        let loadedFromCache = false;
+
+        try {
+            const cached = localStorage.getItem(PEOPLE_DATA_CACHE_KEY);
+            if (cached) {
+                const cachedData = JSON.parse(cached);
+                const rawDepartments = resolveRawDepartments(cachedData);
+                departments = buildDepartmentsFromJson(rawDepartments);
+                loadedFromCache = true;
+            }
+        } catch (cacheError) {
+            console.warn("Cached people data is not usable.", cacheError);
+        }
+
+        if (!loadedFromCache) {
+            console.error("Cached data unavailable, using fallback departments.");
+            departments = getSafeFallbackDepartments();
+        }
     }
+
+    const memberCount = departments.reduce((total, dept) => total + (Array.isArray(dept.people) ? dept.people.length : 0), 0);
+    console.info(`Community graph loaded with ${memberCount} members across ${departments.length} departments.`);
     renderGraph();
     
     // Focus automatico sul dipartimento se specificato nell'URL
