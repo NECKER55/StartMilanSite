@@ -12,7 +12,7 @@
       "lead": {
         "name": "Gabriele Marmo",
         "role": "Head of Operations",
-        "img": "",
+        "img": "photos_starties/Gabriele.jpg",
         "links": {
           "linkedin": "https://www.linkedin.com/in/gabrielemarmo/",
           "website": ""
@@ -20,6 +20,18 @@
       },
       "pos": { "x": 50, "y": 80 },
       "people": [
+        {
+          "img": "photos_starties/Gabriele.jpg",
+          "size": 24,
+          "name": "Gabriele Marmo",
+          "role": "Head of Operations",
+          "department": "Operations",
+          "active": true,
+          "links": {
+            "linkedin": "https://www.linkedin.com/in/gabrielemarmo/",
+            "website": ""
+          }
+        },
         {
           "img": "photos_starties/andrea.jpg",
           "size": 28,
@@ -65,16 +77,29 @@
       "borderClass": "border-primary",
       "description": "Our events are the key to a strong community and an active network. By organizing diverse events we tailor to the interests of our members, thus provide an opportunity to gain new knowledge, skills and experiences that promote growth and innovation.",
       "lead": {
-        "name": "",
+        "name": "Maciej Wojciechowski",
         "role": "Head of Events",
-        "img": "",
+        "img": "photos_starties/maciej.jpg",
         "links": {
-          "linkedin": "",
+          "linkedin": "https://www.linkedin.com/in/maciej-wojciechowski-/",
           "website": ""
         }
       },
       "pos": { "x": 30, "y": 52 },
-      "people": []
+      "people": [
+        {
+          "img": "photos_starties/maciej.jpg",
+          "size": 24,
+          "name": "Maciej Wojciechowski",
+          "role": "Head of Events",
+          "department": "Events",
+          "active": true,
+          "links": {
+            "linkedin": "https://www.linkedin.com/in/maciej-wojciechowski-/",
+            "website": ""
+          }
+        }
+      ]
     },
     {
       "id": "partnerships",
