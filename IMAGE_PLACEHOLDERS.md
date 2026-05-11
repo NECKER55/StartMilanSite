@@ -31,7 +31,7 @@ Questo file contiene la lista di tutte le immagini placeholder che devono essere
 
 ### Favicon & Logo
 - **favicon.svg** - Logo SVG per favicon
-- **logo.png** - Logo PNG principale (200x60px)
+- **Logo_white.pngte.png** - Logo PNG principale (200x60px)
 
 ## 🎨 Linee Guida per le Immagini
 
@@ -76,7 +76,7 @@ assets/
 │       └── hero-background.jpg
 ├── icons/
 │   ├── favicon.svg
-│   └── logo.png
+│   └── Logo_white.pngte.png
 └── videos/ (opzionale)
     └── hero-video.mp4
 ```

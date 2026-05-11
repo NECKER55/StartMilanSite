@@ -39,7 +39,7 @@
 }
 
 .logo-image {
-    max-width: 120px;
+    max-width: 92px;
     height: auto;
     animation: textReveal 1.5s ease-out 0.5s both;
 }
@@ -252,7 +252,7 @@ body {
 }
 
 .nav-logo img {
-    height: 95px;
+    height: 73px;
     width: auto;
     display: block;
 }
